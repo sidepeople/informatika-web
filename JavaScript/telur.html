@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Masak-Masak Telur</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: skyblue;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #FFFFF0;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px #2d5335;
+        }
+
+        h2 {
+            color: #FFFFF0;
+            font-size: 28px;
+            margin-top: 40px;
+        }
+
+        img {
+            width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 18px;
+            color: #FFFFF0;
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            color: #EFEFEF;
+        }
+
+        button {
+            background-color: #ff9900;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        
+    </style>
+</head>
+<body>
+<script>
+    alert("Mari mulai memasak olahan telur!");
+    alert("Let's GO!");
+    alert("Siapkan telur yang akan diolah");
+    alert("Tentukan telurnya akan diolah seperti apa");
+
+    let jenistelur = prompt("Kamu mau masak telur apa? (orak arik/ceplok/rebus)");
+
+    if (jenistelur == "orak arik") {
+        alert("1. Pecahkan telur ke dalam wadah");
+        alert("2. Kocok telur dan tambahkan bumbu sesuai selera");
+        alert("3. Panaskan penggorengan");
+        alert("4. Masukkan kocokan telur ke penggorengan yang telah dipanaskan");
+        alert("5. Aduk-aduk hingga menjadi orak arik");
+        alert("Siap untuk dihidangkan!");
+        if (confirm("Lihat hasil masakanmu?")) {
+            document.write("<h1>Telur Orak Arik Sudah Jadi!</h1>");
+            document.write("<img src='orak arik.jpg' alt='Telur Orak Arik'>");
+            document.write("<p>Lezat, lembut, dan siap disantap bersama nasi hangat!</p>");
+            document.write("<div class='footer'>Terima kasih telah memasak bersama kami! 👩‍🍳</div>");
+        }
+    }
+
+    else if (jenistelur == "ceplok") {
+        alert("1. Panaskan penggorengan yang telah diisi minyak");
+        alert("2. Pecahkan telur di atas penggorengan");
+        alert("3. Tunggu hingga matang");
+        alert("Siap untuk dihidangkan!");
+        if (confirm("Lihat hasil masakanmu?")) {
+            document.write("<h1> Telur Ceplok Sudah Jadi!</h1>");
+            document.write("<img src='telur ceplok.jpg' alt='Telur Ceplok'>");
+            document.write("<p>Kuning telur meleleh sempurna, nikmat untuk sarapan!</p>");
+            document.write("<div class='footer'>Terima kasih telah memasak bersama kami! 👩‍🍳</div>");
+        }
+    }
+
+    else if (jenistelur == "rebus") {
+        alert("1. Didihkan air di dalam panci");
+        alert("2. Masukkan telur utuh ke dalam panci");
+        alert("3. Tunggu beberapa menit sampai telurnya matang");
+        alert("Siap untuk dihidangkan!");
+        if (confirm("Lihat hasil masakanmu?")) {
+            document.write("<h1>Telur Rebus Sudah Jadi!</h1>");
+            document.write("<img src='telur rebus.jpg' alt='Telur Rebus'>");
+            document.write("<p>Telur rebus sehat dan cocok untuk diet seimbang!</p>");
+            document.write("<div class='footer'>Terima kasih telah memasak bersama kami! 👩‍🍳</div>");
+        }
+    }
+
+    else {
+        alert("Jenis telur tidak valid!");
+    }
+</script>
+</body>
+</html>
