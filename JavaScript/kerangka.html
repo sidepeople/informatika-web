@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Sederhana</title>
+</head>
+<body>
+  <script>
+  let pilihan;
+
+do {
+  let menu = `
+=== Kalkulator Sederhana === 
+1. Penjumlahan 
+2. Pengurangan
+3. Perkalian
+4. Pembagian
+5. Keluar
+`;
+
+  pilihan = parseInt(prompt(menu + "Masukkan pilihan (1-5):"));
+
+  while (isNaN(pilihan) || pilihan < 1 || pilihan > 5) {
+    pilihan = parseInt(prompt("Pilihan tidak valid! Masukkan angka 1-5:"));
+  }
+
+  if (pilihan === 5) {
+    alert("Terima kasih! Program selesai.");
+    break;
+  }
+
+  let angka1 = parseFloat(prompt("Masukkan angka pertama:"));
+  let angka2 = parseFloat(prompt("Masukkan angka kedua:"));
+
+  while (isNaN(angka1) || isNaN(angka2)) {
+    alert("Input tidak valid! Masukkan angka yang benar.");
+    angka1 = parseFloat(prompt("Masukkan angka pertama:"));
+    angka2 = parseFloat(prompt("Masukkan angka kedua:"));
+  }
+
+  if (pilihan === 4) {
+    while (angka2 === 0) {
+      alert("Pembagi tidak boleh nol!");
+      angka2 = parseFloat(prompt("Masukkan angka kedua (bukan nol):"));
+    }
+  }
+
+  let hasil;
+
+  switch (pilihan) {
+    case 1:
+      hasil = angka1 + angka2;
+      alert(`Hasil Penjumlahan: ${hasil}`);
+      break;
+    case 2:
+      hasil = angka1 - angka2;
+      alert(`Hasil Pengurangan: ${hasil}`);
+      break;
+    case 3:
+      hasil = angka1 * angka2;
+      alert(`Hasil Perkalian: ${hasil}`);
+      break;
+    case 4:
+      hasil = angka1 / angka2;
+      alert(`Hasil Pembagian: ${hasil}`);
+      break;
+  }
+
+} while (pilihan !== 5);
+
+  </script>
+</body>
+</html>
