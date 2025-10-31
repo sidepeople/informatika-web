@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Function Optional Parameter</title>
+</head>
+<body>
+  <script>
+    // Function dengan default value
+    function sayHello(firstName = "Nama depan tidak diisi", middleName = "Nama tengah tidak diisi", lastName = "Nama akhir tidak diisi") {
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+      document.writeln(`<p>${firstName} ${middleName} ${lastName}</p>`);
+    }
+
+    // Coba panggil dengan jumlah argumen berbeda
+    sayHello();
+    sayHello("Rajie");
+    sayHello("Rajie", "Al-Qadri");
+    sayHello("Rajie", "Al-Qadri", "Anwar");
+    sayHello("Rajie", "Al-Qadri", "Anwar", "Kholid");
+  </script>
+</body>
+</html>
+
