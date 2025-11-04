@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        function* createNames() {
+            yield "Muhammad";
+            yield "Al";
+            yield "Bukhori";
+        }
+        const names = createNames();
+        for (const name of names) {
+            console.info(name);
+        }
+
+        //lazy
+        function* buatGenap(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 4 === 2) {
+                    console.info(`Yield ${i}`);
+                    yield i;
+                }
+            }
+        }
+
+        // eager
+        function buatGenapArray (value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 4) {
+                    console.info(`Yield ${i}`);
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+        const number = buatGenap(100);
+        // for (const number of numbers) {
+        //console.info(number);
+        //}
+        console.info(number.next().value);
+        console.info(number.next().value);
+        console.info(number.next().value);
+    </script>
+</body>
+</html>
