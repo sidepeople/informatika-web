@@ -526,4 +526,128 @@ penggunaannya <b>tidak disarankan</b> dalam JavaScript modern karena bisa menimb
 jika ada variabel dengan nama sama di luar objek.
 </p>
 
+<h4>32. FUNCTION</h4> <p> Fungsi adalah blok kode yang dapat digunakan kembali untuk menjalankan tugas tertentu. Fungsi didefinisikan dengan kata kunci <b>function</b> dan dapat dipanggil berulang kali sesuai kebutuhan. </p> <pre><code> &lt;script&gt; function sayHello() { document.writeln("&lt;p&gt;Hello World&lt;/p&gt;"); }
+
+sayHello();
+sayHello();
+</script>
+</code></pre>
+
+<h4>33. FUNCTION PARAMETER</h4> <p> Fungsi bisa menerima data melalui <b>parameter</b>. Saat fungsi dipanggil, nilai dikirim lewat <b>argumen</b>. Parameter membuat fungsi menjadi lebih fleksibel dan dinamis. </p> <pre><code> &lt;script&gt; function sayHello(name) { document.writeln(`&lt;p&gt;Hello ${name}&lt;/p&gt;`); }
+
+sayHello("Rajie");
+sayHello("Muadz");
+</script>
+</code></pre>
+
+<h4>34. FUNCTION RETURN VALUE</h4> <p> Fungsi dapat mengembalikan nilai menggunakan <b>return</b>. Nilai tersebut bisa disimpan dalam variabel untuk digunakan kembali. </p> <pre><code> &lt;script&gt; function tambah(a, b) { return a + b; }
+
+let hasil = tambah(10, 5);
+document.writeln(&lt;p&gt;Hasil: ${hasil}&lt;/p&gt;);
+</script>
+</code></pre>
+
+<h4>35. FUNCTION DALAM FUNCTION</h4> <p> JavaScript mengizinkan fungsi berada di dalam fungsi lain. Hal ini berguna untuk membagi logika menjadi bagian-bagian kecil (modularisasi). </p> <pre><code> &lt;script&gt; function outer() { function inner() { document.writeln("&lt;p&gt;Hello dari fungsi dalam!&lt;/p&gt;"); } inner(); } outer(); &lt;/script&gt; </code></pre>
+<h4>36. FUNCTION SEBAGAI VALUE</h4> <p> Fungsi di JavaScript diperlakukan seperti nilai — bisa disimpan dalam variabel, dikirim ke fungsi lain, atau dikembalikan dari fungsi lain. </p> <pre><code> &lt;script&gt; function sayHello(name) { return `Hello ${name}`; }
+
+let greet = sayHello;
+document.writeln(greet("Muadz"));
+</script>
+</code></pre>
+
+<h4>37. FUNCTION ANONYMOUS</h4> <p> <b>Anonymous Function</b> adalah fungsi tanpa nama. Biasanya digunakan sebagai nilai variabel atau sebagai callback function. </p> <pre><code> &lt;script&gt; let say = function(name) { document.writeln(`&lt;p&gt;Hello ${name}&lt;/p&gt;`); };
+
+say("Rajie");
+</script>
+</code></pre>
+
+<h4>38. FUNCTION ARROW</h4> <p> <b>Arrow Function</b> (=&gt;) adalah bentuk singkat dari deklarasi fungsi biasa. Tidak memiliki <code>this</code> sendiri, cocok digunakan untuk fungsi sederhana. </p> <pre><code> &lt;script&gt; const tambah = (a, b) =&gt; a + b; document.writeln(`&lt;p&gt;Hasil: ${tambah(3, 7)}&lt;/p&gt;`); &lt;/script&gt; </code></pre>
+<h4>39. FUNCTION DEFAULT PARAMETER</h4> <p> Parameter fungsi dapat memiliki nilai bawaan (default) yang digunakan jika tidak ada argumen yang dikirim. </p> <pre><code> &lt;script&gt; function sayHello(name = "Tamu") { document.writeln(`&lt;p&gt;Halo, ${name}&lt;/p&gt;`); }
+
+sayHello();
+sayHello("Muadz");
+</script>
+</code></pre>
+
+<h4>40. FUNCTION OPTIONAL PARAMETER</h4> <p> Parameter bersifat opsional, artinya fungsi tetap bisa dipanggil meskipun argumen tidak diberikan. Nilainya akan menjadi <b>undefined</b>. </p> <pre><code> &lt;script&gt; function greet(firstName, lastName) { document.writeln(`&lt;p&gt;Halo ${firstName} ${lastName}&lt;/p&gt;`); }
+
+greet("Rajie");
+greet("Rajie", "Anwar");
+</script>
+</code></pre>
+
+<h4>41. REST PARAMETER</h4> <p> Operator <b>rest (...)</b> menggabungkan banyak argumen menjadi satu array. Cocok digunakan untuk menerima jumlah data yang tidak pasti. </p> <pre><code> &lt;script&gt; function sum(...numbers) { let total = 0; for (const num of numbers) { total += num; } return total; }
+
+document.writeln(sum(10, 20, 30, 40));
+</script>
+</code></pre>
+
+<h4>42. FUNCTION RECURSIVE</h4> <p> Fungsi yang memanggil dirinya sendiri disebut <b>recursive function</b>. Biasanya digunakan untuk menyelesaikan masalah berulang seperti faktorial. </p> <pre><code> &lt;script&gt; function factorial(n) { if (n === 1) return 1; else return n * factorial(n - 1); }
+
+document.writeln(factorial(5)); // 120
+</script>
+</code></pre>
+
+<h4>43. FUNCTION GENERATOR</h4> <p> <b>Generator Function</b> menggunakan tanda <code>*</code> setelah kata <code>function</code>. Fungsi ini bisa berhenti sementara dengan <code>yield</code> dan dilanjutkan kembali. </p> <pre><code> &lt;script&gt; function* angka() { yield 1; yield 2; yield 3; }
+
+const iterator = angka();
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+</script>
+</code></pre>
+
+<h4>44. CLOSURE</h4> <p> <b>Closure</b> adalah fungsi yang “mengingat” variabel dari lingkup luar, meskipun fungsi luar sudah selesai dijalankan. </p> <pre><code> &lt;script&gt; function createCounter() { let count = 0; return function() { count++; return count; }; }
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+</script>
+</code></pre>
+
+<h4>45. KATA KUNCI THIS</h4> <p> Kata kunci <b>this</b> menunjuk pada konteks di mana fungsi dijalankan. Nilainya berbeda tergantung di mana digunakan (global, objek, atau arrow function). </p> <pre><code> &lt;script&gt; const person = { name: "Rajie", sayHello: function() { console.log(`Halo, saya ${this.name}`); } };
+
+person.sayHello();
+</script>
+</code></pre>
+
+<h4>46. OBJECT METHOD</h4> <p> <b>Method</b> adalah fungsi yang berada di dalam objek. Biasanya digunakan untuk mendeskripsikan perilaku dari objek tersebut. </p> <pre><code> &lt;script&gt; const siswa = { nama: "Muadz", sapa() { document.writeln(`Halo, saya ${this.nama}`); } };
+
+siswa.sapa();
+</script>
+</code></pre>
+
+<h4>47. OBJECT METHOD ARROW FUNCTION</h4> <p> Perbedaan antara <b>method biasa</b> dan <b>arrow function</b> adalah pada konteks <code>this</code>. Arrow function tidak memiliki <code>this</code> sendiri, sehingga tidak bisa mengakses data objek. </p> <pre><code> &lt;script&gt; const person = { name: "Rajie", sayHi: () =&gt; console.log(`Hi ${this.name}`), sayHello() { console.log(`Hello ${this.name}`); } };
+
+person.sayHi(); // undefined
+person.sayHello(); // Hello Rajie
+</script>
+</code></pre>
+
+<h4>48. GETTER DAN SETTER</h4> <p> Getter dan Setter digunakan untuk mengontrol cara data diakses dan diubah di dalam objek. Getter membaca nilai seperti properti, sedangkan Setter menulis nilai. </p> <pre><code> &lt;script&gt; const user = { firstName: "Rajie", lastName: "Anwar", get fullName() { return `${this.firstName} ${this.lastName}`; }, set fullName(value) { [this.firstName, this.lastName] = value.split(" "); } };
+
+user.fullName = "Muadz Belajar";
+document.writeln(user.fullName);
+</script>
+</code></pre>
+
+<h4>49. SCOPE</h4> <p> Scope menentukan di mana variabel dapat diakses. Ada tiga jenis utama: <b>global scope</b>, <b>function scope</b>, dan <b>block scope</b>. </p> <pre><code> &lt;script&gt; let globalVar = "Global";
+
+function myFunction() {
+let localVar = "Lokal";
+document.writeln(globalVar);
+document.writeln(localVar);
+}
+
+myFunction();
+// console.log(localVar); // Error: tidak bisa diakses di luar
+</script>
+</code></pre>
+
+<h4>50. OPTIONAL CHAINING</h4> <p> <b>Optional Chaining (?.)</b> digunakan untuk mengakses properti tanpa error meskipun nilainya <code>null</code> atau <code>undefined</code>. </p> <pre><code> &lt;script&gt; const user = { alamat: { kota: "Jakarta" } }; document.writeln(user?.alamat?.kota); // Jakarta
+
+const siswa = {};
+document.writeln(siswa?.alamat?.kota); // undefined, tanpa error
+</script>
+</code></pre>
+
 
